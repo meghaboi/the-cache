@@ -1,0 +1,9 @@
+{
+  "name": "the-cache",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A future-archaeology archive of recovered digital artefacts.",
+  "scripts": {
+    "build": "node scripts/build.js"
+  }
+}
