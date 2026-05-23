@@ -857,6 +857,7 @@ function page(title, body, current) {
   const prefix = current && current.startsWith("artifact") ? "../" : "";
   const collectionPrefix = current && current.startsWith("collection") ? "../" : "";
   const hrefPrefix = current && current.startsWith("artifact") ? "../" : collectionPrefix;
+  const homeHref = hrefPrefix || "./";
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -872,9 +873,14 @@ function page(title, body, current) {
 <body>
   <div class="scroll-progress" aria-hidden="true"></div>
   <header class="site-header">
-    <a class="brand" href="${hrefPrefix}index.html" aria-label="The Cache home">THE CACHE</a>
-    <nav class="nav" aria-label="Primary navigation">
-      ${nav.map(([href, label]) => `<a href="${hrefPrefix}${href}">${escapeHtml(label)}</a>`).join("")}
+    <div class="header-bar">
+      <a class="brand" href="${homeHref}" aria-label="The Cache home">THE CACHE</a>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav" id="primary-nav" aria-label="Primary navigation">
+      ${nav.map(([href, label]) => `<a href="${href === "index.html" ? homeHref : `${hrefPrefix}${href}`}">${escapeHtml(label)}</a>`).join("")}
     </nav>
   </header>
   <main>

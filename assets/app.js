@@ -10,6 +10,21 @@
   window.addEventListener("scroll", updateProgress, { passive: true });
   updateProgress();
 
+  var navToggle = document.querySelector(".nav-toggle");
+  var siteHeader = document.querySelector(".site-header");
+  if (navToggle && siteHeader) {
+    navToggle.addEventListener("click", function () {
+      var open = siteHeader.classList.toggle("nav-open");
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    siteHeader.querySelectorAll(".nav a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        siteHeader.classList.remove("nav-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
   var filters = document.querySelectorAll(".filter-button");
   var cards = document.querySelectorAll(".catalogue-filter-target .artifact-card");
   filters.forEach(function (button) {
