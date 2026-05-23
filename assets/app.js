@@ -1,4 +1,15 @@
 (function () {
+  // Recovery loader: play once per session, then remove the node.
+  try {
+    sessionStorage.setItem("cache-intro-seen", "1");
+  } catch (e) {}
+  var loader = document.querySelector(".archive-loader");
+  if (loader) {
+    setTimeout(function () {
+      if (loader.parentNode) loader.parentNode.removeChild(loader);
+    }, 2600);
+  }
+
   var progress = document.querySelector(".scroll-progress");
   function updateProgress() {
     if (!progress) return;

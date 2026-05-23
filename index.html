@@ -9,8 +9,19 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script>try{if(sessionStorage.getItem("cache-intro-seen"))document.documentElement.classList.add("intro-seen");}catch(e){}</script>
 </head>
 <body>
+  <div class="archive-loader" role="status" aria-label="Recovering archive">
+    <div class="loader-plate">
+      <span class="loader-corner tl"></span><span class="loader-corner tr"></span>
+      <span class="loader-corner bl"></span><span class="loader-corner br"></span>
+      <div class="loader-scan" aria-hidden="true"></div>
+      <div class="loader-mark">THE CACHE</div>
+      <div class="loader-status">Recovering artefact&hellip;</div>
+      <div class="loader-bar" aria-hidden="true"><span></span></div>
+    </div>
+  </div>
   <div class="scroll-progress" aria-hidden="true"></div>
   <header class="site-header">
     <div class="header-bar">
@@ -20,7 +31,7 @@
       </button>
     </div>
     <nav class="nav" id="primary-nav" aria-label="Primary navigation">
-      <a href="./">Archive</a><a href="catalogue.html">Catalogue</a><a href="collections/brainrot.html">Brainrot Collection</a><a href="collections/rituals.html">Rituals &amp; Practices</a><a href="collections/objects.html">Objects &amp; Relics</a><a href="collections/figures.html">Deities &amp; Figures</a><a href="collections/languages.html">Languages &amp; Scripts</a><a href="collections/events.html">Events &amp; Epochs</a>
+      <a href="./">Archive</a><a href="catalogue">Catalogue</a><a href="collections/brainrot">Brainrot Collection</a><a href="collections/rituals">Rituals &amp; Practices</a><a href="collections/objects">Objects &amp; Relics</a><a href="collections/figures">Deities &amp; Figures</a><a href="collections/languages">Languages &amp; Scripts</a><a href="collections/events">Events &amp; Epochs</a>
     </nav>
   </header>
   <main>
@@ -54,61 +65,61 @@
       <button class="artifact-id copy-id" data-copy="CAT-2024-0047" type="button">CAT-2024-0047</button>
       <span class="condition condition-fragmentary">Fragmentary</span>
     </div>
-    <h3><a href="artifacts/skibidi.html">The Skibidi Utterance</a></h3>
+    <h3><a href="artifacts/skibidi">The Skibidi Utterance</a></h3>
     <p class="classification">Linguistic Unit / The Brainrot Collection</p>
     <p class="era">Late Social Media Period, c. 2023-2025 CE (Pre-Collapse)</p>
     <p>A chant-form believed to have marked allegiance during juvenile screen rites.</p>
-    <a class="text-link" href="artifacts/skibidi.html">Read entry</a>
+    <a class="text-link" href="artifacts/skibidi">Read entry</a>
   </article><article class="artifact-card" data-collection="rituals">
     <div class="card-top">
       <button class="artifact-id copy-id" data-copy="CAT-2024-0102" type="button">CAT-2024-0102</button>
       <span class="condition condition-well-documented">Well-documented</span>
     </div>
-    <h3><a href="artifacts/doomscrolling.html">Doomscrolling</a></h3>
+    <h3><a href="artifacts/doomscrolling">Doomscrolling</a></h3>
     <p class="classification">Ritual / Rituals &amp; Practices</p>
     <p class="era">Pandemic Isolation Period, c. 2020-2022 CE (Pre-Collapse)</p>
     <p>A nocturnal distress rite involving downward movement through calamity inscriptions.</p>
-    <a class="text-link" href="artifacts/doomscrolling.html">Read entry</a>
+    <a class="text-link" href="artifacts/doomscrolling">Read entry</a>
   </article><article class="artifact-card" data-collection="objects">
     <div class="card-top">
       <button class="artifact-id copy-id" data-copy="CAT-2024-0201" type="button">CAT-2024-0201</button>
       <span class="condition condition-well-documented">Well-documented</span>
     </div>
-    <h3><a href="artifacts/blue-checkmark.html">The Blue Checkmark</a></h3>
+    <h3><a href="artifacts/blue-checkmark">The Blue Checkmark</a></h3>
     <p class="classification">Authority Relic / Objects &amp; Relics</p>
     <p class="era">Verification Period, c. 2009-2023 CE (Pre-Collapse)</p>
     <p>A small blue seal conferring recognition, legitimacy, and later confusion.</p>
-    <a class="text-link" href="artifacts/blue-checkmark.html">Read entry</a>
+    <a class="text-link" href="artifacts/blue-checkmark">Read entry</a>
   </article><article class="artifact-card" data-collection="figures">
     <div class="card-top">
       <button class="artifact-id copy-id" data-copy="CAT-2024-0304" type="button">CAT-2024-0304</button>
       <span class="condition condition-well-documented">Well-documented</span>
     </div>
-    <h3><a href="artifacts/shrek.html">Shrek</a></h3>
+    <h3><a href="artifacts/shrek">Shrek</a></h3>
     <p class="classification">Figure / Deities &amp; Figures</p>
     <p class="era">Early Meme Dispersal Period, c. 2001-2025 CE (Pre-Collapse)</p>
     <p>A green swamp figure who achieved broad devotional circulation.</p>
-    <a class="text-link" href="artifacts/shrek.html">Read entry</a>
+    <a class="text-link" href="artifacts/shrek">Read entry</a>
   </article><article class="artifact-card" data-collection="languages">
     <div class="card-top">
       <button class="artifact-id copy-id" data-copy="CAT-2024-0401" type="button">CAT-2024-0401</button>
       <span class="condition condition-well-documented">Well-documented</span>
     </div>
-    <h3><a href="artifacts/emoji.html">Emoji Hieroglyphics</a></h3>
+    <h3><a href="artifacts/emoji">Emoji Hieroglyphics</a></h3>
     <p class="classification">Script / Languages &amp; Scripts</p>
     <p class="era">Mobile Glyphic Period, c. 2010-2030 CE (Pre-Collapse)</p>
     <p>A pictorial script used to compress affect, threat, appetite, and weather.</p>
-    <a class="text-link" href="artifacts/emoji.html">Read entry</a>
+    <a class="text-link" href="artifacts/emoji">Read entry</a>
   </article><article class="artifact-card" data-collection="events">
     <div class="card-top">
       <button class="artifact-id copy-id" data-copy="CAT-2024-0513" type="button">CAT-2024-0513</button>
       <span class="condition condition-fragmentary">Fragmentary</span>
     </div>
-    <h3><a href="artifacts/twitter-collapse.html">The Twitter Collapse</a></h3>
+    <h3><a href="artifacts/twitter-collapse">The Twitter Collapse</a></h3>
     <p class="classification">Platform Rupture / Events &amp; Epochs</p>
     <p class="era">Late Platform Ownership Period, c. 2022-2024 CE (Pre-Collapse)</p>
     <p>A public square disturbance that scattered adherents across successor settlements.</p>
-    <a class="text-link" href="artifacts/twitter-collapse.html">Read entry</a>
+    <a class="text-link" href="artifacts/twitter-collapse">Read entry</a>
   </article>
       </div>
     </section>

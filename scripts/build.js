@@ -851,8 +851,8 @@ function escapeHtml(value) {
 function page(title, body, current) {
   const nav = [
     ["index.html", "Archive"],
-    ["catalogue.html", "Catalogue"],
-    ...collections.map((collection) => [`collections/${collection.id}.html`, collection.name.replace("The ", "")]),
+    ["catalogue", "Catalogue"],
+    ...collections.map((collection) => [`collections/${collection.id}`, collection.name.replace("The ", "")]),
   ];
   const prefix = current && current.startsWith("artifact") ? "../" : "";
   const collectionPrefix = current && current.startsWith("collection") ? "../" : "";
@@ -869,8 +869,19 @@ function page(title, body, current) {
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="${prefix}${collectionPrefix}assets/styles.css">
   <link rel="icon" href="${prefix}${collectionPrefix}assets/favicon.svg" type="image/svg+xml">
+  <script>try{if(sessionStorage.getItem("cache-intro-seen"))document.documentElement.classList.add("intro-seen");}catch(e){}</script>
 </head>
 <body>
+  <div class="archive-loader" role="status" aria-label="Recovering archive">
+    <div class="loader-plate">
+      <span class="loader-corner tl"></span><span class="loader-corner tr"></span>
+      <span class="loader-corner bl"></span><span class="loader-corner br"></span>
+      <div class="loader-scan" aria-hidden="true"></div>
+      <div class="loader-mark">THE CACHE</div>
+      <div class="loader-status">Recovering artefact&hellip;</div>
+      <div class="loader-bar" aria-hidden="true"><span></span></div>
+    </div>
+  </div>
   <div class="scroll-progress" aria-hidden="true"></div>
   <header class="site-header">
     <div class="header-bar">
@@ -906,11 +917,11 @@ function card(artifact) {
       <button class="artifact-id copy-id" data-copy="${artifact.id}" type="button">${artifact.id}</button>
       <span class="condition condition-${artifact.condition.toLowerCase().replace(/[^a-z]+/g, "-")}">${artifact.condition}</span>
     </div>
-    <h3><a href="artifacts/${artifact.slug}.html">${escapeHtml(artifact.name)}</a></h3>
+    <h3><a href="artifacts/${artifact.slug}">${escapeHtml(artifact.name)}</a></h3>
     <p class="classification">${escapeHtml(artifact.classification)} / ${escapeHtml(collection.name)}</p>
     <p class="era">${escapeHtml(artifact.era)}</p>
     <p>${escapeHtml(artifact.summary)}</p>
-    <a class="text-link" href="artifacts/${artifact.slug}.html">Read entry</a>
+    <a class="text-link" href="artifacts/${artifact.slug}">Read entry</a>
   </article>`;
 }
 
@@ -1009,7 +1020,7 @@ function artifactPages() {
     const body = `
       <article class="artifact-page${corrupted}">
         <header class="artifact-header">
-          <a class="back-link" href="../catalogue.html">Catalogue Index</a>
+          <a class="back-link" href="../catalogue">Catalogue Index</a>
           <div class="metadata-label">
             <button class="artifact-id copy-id" data-copy="${artifact.id}" type="button">${artifact.id}</button>
             <span class="classification-badge">${escapeHtml(artifact.classification)}</span>
@@ -1037,7 +1048,7 @@ function artifactPages() {
         </section>
         <section class="entry-section related">
           <h2>Related Artefacts</h2>
-          <div class="related-links">${related.map((item) => `<a href="${item.slug}.html"><span>${escapeHtml(item.id)}</span>${escapeHtml(item.name)}</a>`).join("")}</div>
+          <div class="related-links">${related.map((item) => `<a href="${item.slug}"><span>${escapeHtml(item.id)}</span>${escapeHtml(item.name)}</a>`).join("")}</div>
         </section>
       </article>`;
     write(`artifacts/${artifact.slug}.html`, page(artifact.name, body, "artifact"));
@@ -1052,7 +1063,7 @@ function notFoundPage() {
       <p>The requested fragment could not be recovered from available cache deposits. Scholars suggested that the object either never existed, existed too intensely, or had been moved to an uncatalogued shelf.</p>
     </section>
     <section class="section">
-      <a class="text-link" href="catalogue.html">Return to catalogue index</a>
+      <a class="text-link" href="catalogue">Return to catalogue index</a>
     </section>`;
   write("404.html", page("Artefact Missing", body, "404"));
 }

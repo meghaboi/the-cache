@@ -9,8 +9,19 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/styles.css">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <script>try{if(sessionStorage.getItem("cache-intro-seen"))document.documentElement.classList.add("intro-seen");}catch(e){}</script>
 </head>
 <body>
+  <div class="archive-loader" role="status" aria-label="Recovering archive">
+    <div class="loader-plate">
+      <span class="loader-corner tl"></span><span class="loader-corner tr"></span>
+      <span class="loader-corner bl"></span><span class="loader-corner br"></span>
+      <div class="loader-scan" aria-hidden="true"></div>
+      <div class="loader-mark">THE CACHE</div>
+      <div class="loader-status">Recovering artefact&hellip;</div>
+      <div class="loader-bar" aria-hidden="true"><span></span></div>
+    </div>
+  </div>
   <div class="scroll-progress" aria-hidden="true"></div>
   <header class="site-header">
     <div class="header-bar">
@@ -20,14 +31,14 @@
       </button>
     </div>
     <nav class="nav" id="primary-nav" aria-label="Primary navigation">
-      <a href="../">Archive</a><a href="../catalogue.html">Catalogue</a><a href="../collections/brainrot.html">Brainrot Collection</a><a href="../collections/rituals.html">Rituals &amp; Practices</a><a href="../collections/objects.html">Objects &amp; Relics</a><a href="../collections/figures.html">Deities &amp; Figures</a><a href="../collections/languages.html">Languages &amp; Scripts</a><a href="../collections/events.html">Events &amp; Epochs</a>
+      <a href="../">Archive</a><a href="../catalogue">Catalogue</a><a href="../collections/brainrot">Brainrot Collection</a><a href="../collections/rituals">Rituals &amp; Practices</a><a href="../collections/objects">Objects &amp; Relics</a><a href="../collections/figures">Deities &amp; Figures</a><a href="../collections/languages">Languages &amp; Scripts</a><a href="../collections/events">Events &amp; Epochs</a>
     </nav>
   </header>
   <main>
     
       <article class="artifact-page">
         <header class="artifact-header">
-          <a class="back-link" href="../catalogue.html">Catalogue Index</a>
+          <a class="back-link" href="../catalogue">Catalogue Index</a>
           <div class="metadata-label">
             <button class="artifact-id copy-id" data-copy="CAT-2024-0073" type="button">CAT-2024-0073</button>
             <span class="classification-badge">Cursed Geography</span>
@@ -59,7 +70,7 @@
         </section>
         <section class="entry-section related">
           <h2>Related Artefacts</h2>
-          <div class="related-links"><a href="skibidi.html"><span>CAT-2024-0047</span>The Skibidi Utterance</a><a href="rizz.html"><span>CAT-2024-0051</span>Rizz</a><a href="npc-livestream.html"><span>CAT-2024-0063</span>NPC Livestream Phenomenon</a></div>
+          <div class="related-links"><a href="skibidi"><span>CAT-2024-0047</span>The Skibidi Utterance</a><a href="rizz"><span>CAT-2024-0051</span>Rizz</a><a href="npc-livestream"><span>CAT-2024-0063</span>NPC Livestream Phenomenon</a></div>
         </section>
       </article>
   </main>
